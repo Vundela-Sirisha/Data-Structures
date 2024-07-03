@@ -39,3 +39,61 @@ def search(list,n):
         print(p)
     else:
         print("NOT FOUND")
+
+#check if the array is sorted
+def arr_sort(arr,n):
+    if n==0 and n==1:
+        return True
+    return(arr[n-1]>arr[n-2] and arr_sort(arr,n-1))
+arr=list(map(int,input()))
+n=len(arr)
+if (arr_sort(arr,n)):
+    print("Yes")
+else:
+    print("No")
+        
+#largest element in an array (by using max method)
+a=list(map(int,input()))
+print(max(a))
+#by using sort()
+a=list(map(int,input()))
+a.sort()
+print(a[-1])
+
+#second largest
+a=list(map(int,input()))
+a.sort()
+print(a[-2])
+
+#Binary Search
+p=-1
+def search(list,n):
+    l=0
+    u=len(list)-1
+    while l <= u:
+        mid=(l+u)//2
+        if list[mid]==n:
+            globals()['p']=mid
+            return True
+        else:
+            if list[mid]<n:
+                l=mid+1;
+            else:
+                u=mid-1;
+    return False
+list = [4,7,8,12,45,99,102,702,10987,56666]
+n=102
+if search(list, n):
+    print("Found at ",p+1)
+else:
+    print("Not Found")
+
+#implementing queue using list.
+q=[]
+q.append(10)
+q.append(20)
+q.append(30)
+print(q)
+q.pop(-1)
+print(q)
+
