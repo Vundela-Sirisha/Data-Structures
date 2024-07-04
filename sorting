@@ -97,3 +97,42 @@ print(q)
 q.pop(-1)
 print(q)
 
+# Left rotation an array by one place
+def left_rotation(arr):
+    if not arr:
+        return arr
+    first_ele=arr.pop(0)
+    arr.append(first_ele)
+    return arr
+arr=list(map(int,input()))    
+rotate_arr=left_rotation(arr)
+print(rotate_arr)
+
+#Left rotation an array by d place
+def left_rotation(arr,d):
+    n=len(arr)
+    d=d%n
+    return arr[d:]+arr[:d]
+arr=list(map(int,input()))
+d=int(input())
+rotated_arr=left_rotation(arr,d)
+print(rotated_arr)
+
+#move all zeros to the end
+def move_zero(arr):
+    n=len(arr)
+    c=0
+    for i in range(n):
+        if arr[i]!=0:
+            arr[c]=arr[i]
+            c+=1
+    while c<n:
+        arr[c]=0
+        c+=1
+arr=list(map(int,input()))
+result=move_zero(arr)
+print(result)
+
+
+
+
